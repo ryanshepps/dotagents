@@ -5,19 +5,19 @@ type: moc
 
 # Knowledge Base — code
 
-96 entries. Software-engineering laws, language rules, and cross-cutting craft guides. Leaves declare priority (1=foundational, 5=niche), applies_when (task contexts), and categories (list).
+102 entries. Software-engineering laws, language rules, and cross-cutting craft guides. Leaves declare priority (1=foundational, 5=niche), applies_when (task contexts), and categories (list).
 
 ## Task territories (software engineering laws)
 
 Engineering laws grouped by the kind of decision they inform.
 
-- [[architecture]] — Laws governing system structure, coupling, service boundaries. (12 entries)
-- [[design]] — Code patterns: DRY, KISS, YAGNI, SOLID, abstractions, coupling. (15 entries)
+- [[architecture]] — Laws governing system structure, coupling, service boundaries. (16 entries)
+- [[design]] — Code patterns: DRY, KISS, YAGNI, SOLID, abstractions, coupling. (16 entries)
 - [[teams]] — Organizational dynamics, communication, team sizing, coordination. (10 entries)
-- [[planning]] — Estimation, timelines, optimization decisions, scoping. (13 entries)
-- [[quality]] — Testing, technical debt, code health, resilience. (19 entries)
-- [[scale]] — Performance, concurrency, parallelization limits, network effects. (3 entries)
-- [[decisions]] — Cognitive biases, heuristics, mental models for reasoning. (20 entries)
+- [[planning]] — Estimation, timelines, optimization decisions, scoping. (14 entries)
+- [[quality]] — Testing, technical debt, code health, resilience. (21 entries)
+- [[scale]] — Performance, concurrency, parallelization limits, network effects. (4 entries)
+- [[decisions]] — Cognitive biases, heuristics, mental models for reasoning. (21 entries)
 
 ## UX & Design
 
@@ -38,7 +38,7 @@ Process and craft rules that apply regardless of language or layer.
 - [[testing]] — Test writing principles and patterns. (1 entry)
 - [[prs]] — Pull request workflow and review process. (1 entry)
 - [[style]] — Universal coding style rules. (2 entries)
-- [[communication]] — How to converse with users about code. (1 entry)
+- [[communication]] — How to converse with users about code. (3 entries)
 
 ## How to Use
 

@@ -20,5 +20,6 @@ Estimation, sequencing, and scoping heuristics. Use when sizing work, picking wh
 - [[parkinsons-law]] (p2) — Work expands to fill the time available for its completion.
 - [[second-system-effect]] (p2) — Small, successful systems tend to be followed by overengineered, bloated replacements.
 - [[sunk-cost-fallacy]] (p2) — Sticking with a choice because you've invested time or energy in it, even when walking away helps you.
+- [[feature-toggles]] (p3) — Runtime flags that decouple deploy from release, enabling trunk-based development, gradual rollout, and kill switches — but each flag is debt.
 - [[gilbs-law]] (p3) — Anything you need to quantify can be measured in some way better than not measuring it.
 - [[ship-over-research]] (p3) — Define success criteria up-front and ship minimal scope — doing teaches more than researching.

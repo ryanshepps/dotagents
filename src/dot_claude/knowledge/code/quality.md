@@ -22,7 +22,9 @@ Testing strategy, debt, resilience, and code-health practices. Use when writing 
 - [[goodharts-law]] (p2) — When a measure becomes a target, it ceases to be a good measure.
 - [[murphys-law]] (p2) — Anything that can go wrong will go wrong.
 - [[postels-law]] (p2) — Be conservative in what you do, be liberal in what you accept from others.
+- [[resilience-patterns]] (p2) — Defensive patterns — circuit breaker, bulkhead, timeout, retry with backoff — that contain failures in distributed systems.
 - [[testing-pyramid]] (p2) — A project should have many fast unit tests, fewer integration tests, and only a small number of UI tests.
+- [[feature-toggles]] (p3) — Runtime flags that decouple deploy from release, enabling trunk-based development, gradual rollout, and kill switches — but each flag is debt.
 - [[law-of-unintended-consequences]] (p3) — Whenever you change a complex system, expect surprise.
 - [[lehmans-laws]] (p3) — Software that reflects the real world must evolve, and that evolution has predictable limits.
 - [[linuss-law]] (p3) — Given enough eyeballs, all bugs are shallow.
