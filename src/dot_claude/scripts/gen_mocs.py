@@ -135,6 +135,11 @@ WRITE_CATEGORY_META: CategoryMeta = {
         "Genre rules per surface: blog, email, PR comment, slack, doc.",
         "Surface-specific rules — what works in a blog post fails in an email. Use when picking conventions for the channel: length, headers, salutations, sign-offs.",
     ),
+    "critique": (
+        "Critique",
+        "Diagnostic mode: rubric, feedback format, what NOT to do.",
+        "How to act as critique partner without imposing your voice on the author's draft. Use when asked to review a piece, score against a rubric, or give structured feedback.",
+    ),
 }
 
 WRITE_CATEGORY_TENSIONS: Tensions = {}
@@ -144,6 +149,11 @@ WRITE_GROUP_ORDER: GroupOrder = [
         "Composition",
         ["tone", "structure", "format"],
         "Craft rules grouped by the dimension they shape: how it sounds, how it's built, where it lives.",
+    ),
+    (
+        "Review",
+        ["critique"],
+        "How to act as critique partner without imposing your voice on the author's draft.",
     ),
 ]
 

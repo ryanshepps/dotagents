@@ -15,6 +15,12 @@ Craft rules grouped by the dimension they shape: how it sounds, how it's built, 
 - [[structure]] — Composition: openings, transitions, evidence, narrative arc. (9 entries)
 - [[format]] — Genre rules per surface: blog, email, PR comment, slack, doc. (1 entry)
 
+## Review
+
+How to act as critique partner without imposing your voice on the author's draft.
+
+- [[critique]] — Diagnostic mode: rubric, feedback format, what NOT to do. (1 entry)
+
 ## How to Use
 
 1. Pick 1-2 categories relevant to the current subtask
