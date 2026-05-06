@@ -17,6 +17,7 @@ Code-level patterns for what to abstract, what to leave concrete, and when copyi
 - [[technical-debt]] (p1) — Technical Debt is everything that slows us down when developing software.
 - [[yagni]] (p1) — Don't add functionality until it is necessary.
 - [[broken-windows-theory]] (p2) — Don't leave broken windows (bad designs, wrong decisions, or poor code) unrepaired.
+- [[forgiving-search]] (p2) — Search must match how users describe things, not how data is stored — substring matching is not search.
 - [[hexagonal-architecture]] (p2) — Isolate domain logic from I/O by defining ports (interfaces the core needs) and adapters (implementations for DB, HTTP, queues).
 - [[law-of-demeter]] (p2) — An object should only interact with its immediate friends, not strangers.
 - [[law-of-leaky-abstractions]] (p2) — All non-trivial abstractions, to some degree, are leaky.

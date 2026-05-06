@@ -18,6 +18,7 @@ Perception, cognition, and interaction laws governing how users experience inter
 - [[choice-overload]] (p2) — Too many options paralyze users — decision quality and satisfaction drop as choice count rises.
 - [[chunking]] (p2) — Group related information into meaningful units so users can process and recall it more easily.
 - [[doherty-threshold]] (p2) — Keep system response under 400ms — below that threshold, users stay in flow and productivity climbs sharply.
+- [[forgiving-search]] (p2) — Search must match how users describe things, not how data is stored — substring matching is not search.
 - [[law-of-proximity]] (p2) — Elements close together read as related — use spacing as the primary grouping tool.
 - [[millers-law]] (p2) — Working memory holds about 7±2 items — design around this limit, not against it.
 - [[occams-razor]] (p2) — The simplest explanation is often the most accurate one.
