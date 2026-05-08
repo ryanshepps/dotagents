@@ -11,10 +11,38 @@ Help turn ideas into fully formed designs and specs through natural collaborativ
 
 Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
 
+## Knowledge Base
+
+Brainstorming is decision-heavy work — scope, alternatives, stop conditions. Use the **code knowledge base** at `~/.claude/knowledge/code/` to ground reasoning, following the same protocol as the `code` skill.
+
+Entry points:
+1. Read `~/.claude/knowledge/code/index.md` to discover territories.
+2. Pick the MOCs that match the current brainstorm. Decide case by case; don't anchor on a default set.
+3. Pick leaves by description + `applies_when`. Prefer priority 1 unless the task needs niche entries. Follow `related:` fields when adjacent leaves strengthen the reasoning.
+4. Re-fetch as the brainstorm shape shifts — different phases (understanding, alternatives, design) often need different leaves.
+
+Read each knowledge file via the `Read` tool — the PostToolUse hook auto-logs the fetch to `~/.claude/knowledge/code/.stats/fetches.jsonl`. Don't bypass with `cat`/`grep`; the stats only increment on `Read`.
+
+### Audit trail (MANDATORY)
+
+Before every Read of a knowledge file, emit one line with the `KB:` prefix stating WHAT and WHY in terms of THIS brainstorm. Same convention as the `code` skill.
+
+Format:
+- `KB: index.md — discovering territories`
+- `KB: <moc>.md — <reason this MOC fits the current brainstorm>`
+- `KB: <leaf>.md (pN) — <how it applies to this brainstorm decision>`
+
+Rules:
+- One line per Read, immediately before the tool call.
+- Always include the priority tag for leaf files (not MOCs).
+- Reason in terms of the current brainstorm, not the general topic of the entry.
+- Only narrate Reads under `~/.claude/knowledge/code/` — not source code, project files, or design drafts.
+
 ## The Process
 
 **Understanding the idea:**
 - Check out the current project state first (files, docs, recent commits)
+- Hit the KB before asking probing questions: read `index.md`, then pull whichever MOCs and leaves fit the task
 - Ask questions one at a time to refine the idea
 - Prefer multiple choice questions when possible, but open-ended is fine too
 - Only one question per message - if a topic needs more exploration, break it into multiple questions
@@ -22,8 +50,9 @@ Start by understanding the current project context, then ask questions one at a 
 
 **Exploring approaches:**
 - Propose 2-3 different approaches with trade-offs
+- Re-fetch from the KB if the alternatives reach into new territories
 - Present options conversationally with your recommendation and reasoning
-- Lead with your recommended option and explain why
+- Lead with your recommended option and explain why — cite the leaves that shaped it by slug
 
 **Presenting the design:**
 - Once you believe you understand what you're building, present the design
@@ -52,3 +81,4 @@ Start by understanding the current project context, then ask questions one at a 
 - **Explore alternatives** - Always propose 2-3 approaches before settling
 - **Incremental validation** - Present design in sections, validate each
 - **Be flexible** - Go back and clarify when something doesn't make sense
+- **Ground reasoning in the KB** - Pull at least one leaf early; cite by slug when it shapes a recommendation so the user can audit the reasoning
