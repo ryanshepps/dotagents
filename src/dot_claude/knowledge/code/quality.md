@@ -29,7 +29,6 @@ Testing strategy, debt, resilience, and code-health practices. Use when writing 
 - [[lehmans-laws]] (p3) — Software that reflects the real world must evolve, and that evolution has predictable limits.
 - [[linuss-law]] (p3) — Given enough eyeballs, all bugs are shallow.
 - [[pesticide-paradox]] (p3) — Repeatedly running the same tests becomes less effective over time.
-- [[sturgeons-law]] (p4) — 90% of everything is crap.
 
 ## Tensions
 

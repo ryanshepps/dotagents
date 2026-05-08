@@ -7,7 +7,7 @@ applies_when:
   - grouping form fields
   - designing card layouts
   - separating sections on a page
-related: [law-of-proximity, law-of-similarity, law-of-uniform-connectedness]
+related: [law-of-proximity, law-of-similarity]
 source: https://lawsofux.com/law-of-common-region/
 ---
 

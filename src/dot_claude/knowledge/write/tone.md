@@ -18,4 +18,3 @@ How a piece sounds — voice, register, persona. Use when matching a brand, cali
 - [[rhythm-fragment-after-sentence]] (p2) — A short fragment after a long sentence creates beat. Use sparingly to land punchlines, mark scene breaks, and signal the writer's reaction.
 - [[self-deprecation-honest]] (p2) — Own mistakes plainly. State what happened, accept the cost, move on. Don't fish for reassurance or perform humility.
 - [[split-long-sentences]] (p2) — Break long sentences into shorter standalone sentences. Same meaning, less cognitive load. Periods are free.
-- [[write-consistently]] (p4) — Writing improves through volume, not insight. Daily practice on real surfaces — blogs, journals, public posts — builds skill that no single tip teaches.

@@ -7,7 +7,7 @@ applies_when:
   - designing consistent components
   - differentiating interactive vs static elements
   - building visual hierarchy
-related: [law-of-proximity, law-of-common-region, law-of-uniform-connectedness]
+related: [law-of-proximity, law-of-common-region]
 source: https://lawsofux.com/law-of-similarity/
 ---
 

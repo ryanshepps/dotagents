@@ -39,4 +39,3 @@ Perception, cognition, and interaction laws governing how users experience inter
 - [[von-restorff-effect]] (p3) — An item that looks different from its neighbors gets remembered — use contrast sparingly to highlight what matters.
 - [[working-memory]] (p3) — The short-term mental buffer users rely on mid-task — offload information to the interface so they do not have to hold it.
 - [[zeigarnik-effect]] (p3) — Users remember incomplete tasks better than completed ones — use open loops to draw them back.
-- [[law-of-uniform-connectedness]] (p4) — Visually connected elements read as more related than unconnected ones, overriding proximity and similarity.

@@ -17,4 +17,3 @@ How a piece is built — openings that earn attention, transitions that carry we
 - [[end-with-idea-not-summary]] (p2) — Don't recap. Don't write "In conclusion." Leave the reader on a fresh thought, image, or unresolved beat. Endings that summarize the piece they just read are filler.
 - [[show-dont-tell]] (p2) — Render scenes through sensory detail and action. Telling states the conclusion ("she was tired"); showing gives the evidence ("she yawned"). Showing builds trust and lets the reader feel the experience.
 - [[if-then-sentence-structure]] (p3) — Frame arguments as logical chains — "If A, then B" — to force precision, expose weak inferences, and let the reader check your reasoning step by step.
-- [[write-consistently]] (p4) — Writing improves through volume, not insight. Daily practice on real surfaces — blogs, journals, public posts — builds skill that no single tip teaches.
