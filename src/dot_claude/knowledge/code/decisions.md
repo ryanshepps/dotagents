@@ -9,6 +9,7 @@ Cognitive biases, heuristics, and reasoning models. Use when stuck, choosing bet
 
 ## Entries (by priority)
 
+- [[architect-before-agent]] (p1) — Design module boundaries, data ownership, and concurrency invariants before writing code — implementation cannot invent coherent architecture.
 - [[pareto-principle]] (p1) — 80% of the problems result from 20% of the causes.
 - [[think-before-coding]] (p1) — Surface assumptions and tradeoffs before writing code — don't hide confusion or silently pick between interpretations.
 - [[architecture-decision-records]] (p2) — Short markdown files committed to the repo capturing context, decision, and consequences for each significant architectural choice.
@@ -19,6 +20,7 @@ Cognitive biases, heuristics, and reasoning models. Use when stuck, choosing bet
 - [[parkinsons-law]] (p2) — Work expands to fill the time available for its completion.
 - [[peak-end-rule]] (p2) — Users judge experiences by their peak moment and their end, not the average — invest heavily in both.
 - [[sunk-cost-fallacy]] (p2) — Sticking with a choice because you've invested time or energy in it, even when walking away helps you.
+- [[velocity-masks-decay]] (p2) — Fast feature shipping hides architectural rot — codebase looks healthy until many things break at once.
 - [[cognitive-bias]] (p3) — Users' perceptions and decisions are systematically distorted by mental shortcuts — design around these biases, not against them.
 - [[confirmation-bias]] (p3) — A tendency to favor information that supports our existing beliefs or ideas.
 - [[dunning-kruger-effect]] (p3) — The less you know about something, the more confident you tend to be.

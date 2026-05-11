@@ -8,7 +8,7 @@ applies_when:
   - multiple valid interpretations exist
   - simpler approach seems possible
   - requirements are unclear
-related: [first-principles-thinking, simplicity-first]
+related: [first-principles-thinking, simplicity-first, architect-before-agent]
 source: https://x.com/karpathy/status/2015883857489522876
 ---
 

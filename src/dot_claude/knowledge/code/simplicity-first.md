@@ -8,7 +8,7 @@ applies_when:
   - reviewing AI-generated output
   - resisting over-engineering
   - deciding between solutions
-related: [kiss-principle, yagni, coding-style, surgical-changes]
+related: [kiss-principle, yagni, coding-style, surgical-changes, architect-before-agent, agent-expedient-patterns]
 source: https://x.com/karpathy/status/2015883857489522876
 ---
 

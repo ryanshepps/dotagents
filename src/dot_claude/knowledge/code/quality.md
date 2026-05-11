@@ -15,6 +15,7 @@ Testing strategy, debt, resilience, and code-health practices. Use when writing 
 - [[surgical-changes]] (p1) — Touch only what the request requires — don't refactor, reformat, or clean up adjacent code uninvited.
 - [[technical-debt]] (p1) — Technical Debt is everything that slows us down when developing software.
 - [[yagni]] (p1) — Don't add functionality until it is necessary.
+- [[agent-expedient-patterns]] (p2) — Watch for god objects, positional arrays, unsafe shared mutation, and conditional sprawl — default path when adding code under time pressure.
 - [[boy-scout-rule]] (p2) — Leave the code better than you found it.
 - [[broken-windows-theory]] (p2) — Don't leave broken windows (bad designs, wrong decisions, or poor code) unrepaired.
 - [[bus-factor]] (p2) — The minimum number of team members whose loss would put the project in serious trouble.
@@ -24,6 +25,7 @@ Testing strategy, debt, resilience, and code-health practices. Use when writing 
 - [[postels-law]] (p2) — Be conservative in what you do, be liberal in what you accept from others.
 - [[resilience-patterns]] (p2) — Defensive patterns — circuit breaker, bulkhead, timeout, retry with backoff — that contain failures in distributed systems.
 - [[testing-pyramid]] (p2) — A project should have many fast unit tests, fewer integration tests, and only a small number of UI tests.
+- [[velocity-masks-decay]] (p2) — Fast feature shipping hides architectural rot — codebase looks healthy until many things break at once.
 - [[feature-toggles]] (p3) — Runtime flags that decouple deploy from release, enabling trunk-based development, gradual rollout, and kill switches — but each flag is debt.
 - [[law-of-unintended-consequences]] (p3) — Whenever you change a complex system, expect surprise.
 - [[lehmans-laws]] (p3) — Software that reflects the real world must evolve, and that evolution has predictable limits.

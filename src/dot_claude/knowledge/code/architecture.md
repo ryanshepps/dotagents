@@ -9,6 +9,7 @@ How components couple, where boundaries fall, and why organizational shape leaks
 
 ## Entries (by priority)
 
+- [[architect-before-agent]] (p1) — Design module boundaries, data ownership, and concurrency invariants before writing code — implementation cannot invent coherent architecture.
 - [[conways-law]] (p1) — Organizations design systems that mirror their own communication structure. Team topology predicts system topology.
 - [[galls-law]] (p1) — A complex system that works is invariably found to have evolved from a simple system that worked.
 - [[hyrums-law]] (p1) — With a sufficient number of API users, all observable behaviors of your system will be depended on by somebody.
