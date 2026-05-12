@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Read|mcp__.*read.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash {{ .chezmoi.homeDir }}/.claude/hooks/log-knowledge-fetch.sh",
+            "statusMessage": "Logging knowledge fetch"
+          }
+        ]
+      },
+      {
+        "matcher": "apply_patch|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash {{ .chezmoi.homeDir }}/.claude/hooks/check-rules-reminder.sh",
+            "statusMessage": "Checking language rules"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{ .chezmoi.homeDir }}/.claude/hooks/enforce-run-commands.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+

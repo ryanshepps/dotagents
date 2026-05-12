@@ -12,4 +12,4 @@ case "$ext" in
   *) exit 0 ;;
 esac
 
-jq -nc --arg msg "IMPORTANT: Review the code you just wrote against rules/${rule}.md. Fix any violations silently." '{hookSpecificOutput: {hookEventName: "PostToolUse", additionalContext: $msg}}'
+jq -nc --arg msg "IMPORTANT: Review the code you just wrote against ~/.agents/knowledge/code/${rule}.md. Fix any violations silently." '{hookSpecificOutput: {hookEventName: "PostToolUse", additionalContext: $msg}}'

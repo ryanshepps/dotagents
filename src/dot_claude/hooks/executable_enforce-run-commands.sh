@@ -1,9 +1,9 @@
 #!/bin/bash
-# Stop hook: forces Claude to actually run commands instead of suggesting them.
+# Stop hook: forces the agent to actually run commands instead of suggesting them.
 #
-# Checks last_assistant_message for patterns that indicate Claude suggested
-# a command rather than running it. If detected, blocks the stop and tells
-# Claude to run the command.
+# Checks last_assistant_message for patterns that indicate the agent suggested
+# a command rather than running it. If detected, blocks the stop and tells the
+# agent to run the command.
 
 INPUT=$(cat)
 

@@ -5,7 +5,7 @@ argument-hint: "[task — e.g. 'compose blog post on X' or 'tone-check this emai
 
 # /write $ARGUMENTS
 
-You have on-demand access to the **writing knowledge base** at `~/.claude/knowledge/write/`. Fetch as the task unfolds — do NOT front-load everything. ⊥ Read from `~/.claude/knowledge/code/` — that's the coding KB, owned by `/code`.
+You have on-demand access to the **writing knowledge base** at `~/.agents/knowledge/write/`. Fetch as the task unfolds — do NOT front-load everything. ⊥ Read from `~/.agents/knowledge/code/` — that's the coding KB, owned by `/code`.
 
 ## Knowledge Base Structure
 
@@ -27,7 +27,7 @@ If unclear, ask which intent in one short message before proceeding.
 
 ## Flow
 
-1. **Read `~/.claude/knowledge/write/index.md`** first to see available territories.
+1. **Read `~/.agents/knowledge/write/index.md`** first to see available territories.
 2. **Pick MOCs by intent**:
    - compose → `structure.md` (always), `tone.md` (always), `format.md` (when surface known: blog/email/PR comment/slack)
    - tone-check → `tone.md` (always), `format.md` (genre-specific rules)
@@ -50,7 +50,7 @@ Rules:
 - One line per Read, immediately before the tool call.
 - Always include the priority tag for leaf files (not MOCs).
 - State the reason in terms of THIS task, not the general topic of the entry.
-- Do NOT narrate non-writing-knowledge Reads — only files under `~/.claude/knowledge/write/`.
+- Do NOT narrate non-writing-knowledge Reads — only files under `~/.agents/knowledge/write/`.
 
 ## Priority
 
@@ -68,4 +68,4 @@ $ARGUMENTS
 
 ## Execution
 
-Classify intent. Read `~/.claude/knowledge/write/index.md`. Pick 1-2 MOCs. Pick 2-5 leaves. Read them. Apply (compose | critique | revise). Iterate.
+Classify intent. Read `~/.agents/knowledge/write/index.md`. Pick 1-2 MOCs. Pick 2-5 leaves. Read them. Apply (compose | critique | revise). Iterate.

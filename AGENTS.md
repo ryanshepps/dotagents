@@ -1,8 +1,8 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code when working in this repository.
-Codex reads the sibling `AGENTS.md`; keep the dual-agent contract below aligned
-in both files.
+This file provides guidance to Codex when working in this repository. Claude
+reads the sibling `CLAUDE.md`; keep the dual-agent contract below aligned in
+both files.
 
 ## Dual-Agent Contract
 

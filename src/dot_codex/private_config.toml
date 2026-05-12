@@ -1,0 +1,18 @@
+# Codex global configuration managed by this chezmoi source.
+#
+# Shared agent assets live under ~/.agents so Claude and Codex consume the same
+# skills, knowledge base, and helper scripts.
+
+project_doc_fallback_filenames = ["CLAUDE.md"]
+project_doc_max_bytes = 65536
+personality = "pragmatic"
+
+[features]
+hooks = true
+
+[projects."/Users/ryansheppard/Projects/claude"]
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 1
+

@@ -1,79 +1,107 @@
 # claude
 
-Personal Claude Code configuration. Materialized into `~/.claude/` via [chezmoi](https://www.chezmoi.io/).
+Personal Claude and Codex configuration, managed by
+[chezmoi](https://www.chezmoi.io/).
 
-## Repo Layout
+## Layout
 
-```
-.chezmoiroot                          → points chezmoi at src/
-CLAUDE.md                             → repo guide for Claude Code (not synced)
-README.md                             → this file (not synced)
+```text
+.chezmoiroot                          -> points chezmoi at src/
+CLAUDE.md                             -> Claude project instructions
+AGENTS.md                             -> Codex project instructions
+README.md                             -> this file
 src/
-  .chezmoi.toml.tmpl                  → init template; prompts for `work` bool
-  dot_claude/                         → materializes to ~/.claude/
-    knowledge/
-      code/                           → code knowledge base (laws, style, workflow), consumed by /code
-      write/                          → writing knowledge base (tone, structure, format), consumed by /write
-    commands/                         → slash commands (*.md)
-    skills/                           → skill directories (each has SKILL.md)
-    agents/                           → agent definitions
-    hooks/executable_*.sh             → shell hooks (executable_ preserves +x)
-    scripts/                          → helper scripts (e.g., MOC regenerator)
-    settings.json.tmpl                → Go-templated settings (work-gated)
+  .chezmoi.toml.tmpl                  -> init template; prompts for work bool
+  dot_agents/                         -> materializes to ~/.agents/
+    skills/                           -> shared skills, each with SKILL.md
+    knowledge/                        -> shared code/write knowledge bases
+    scripts/                          -> shared helper and validation scripts
+  dot_claude/                         -> materializes to ~/.claude/
+    commands/                         -> Claude slash commands
+    hooks/executable_*.sh             -> Claude-compatible hook scripts
+    settings.json.tmpl                -> Claude settings
+    symlink_*                         -> ~/.claude compatibility links
+  dot_codex/                          -> materializes to ~/.codex/
+    AGENTS.md                         -> Codex global instructions
+    config.toml                       -> Codex global config
+    hooks.json.tmpl                   -> Codex hook config
 ```
 
-## Knowledge Management System
+## Runtime Shape
 
-The `knowledge/` folder holds two domain-scoped, agent-consumable corpora. Inspired by [arscontexta](https://github.com/agenticnotetaking/arscontexta).
+Shared assets live once under `~/.agents/`:
 
-- `knowledge/code/` — coding laws, style rules, language guides, workflow patterns. Consumed by `/code`.
-- `knowledge/write/` — prose craft: tone, structure, format. Consumed by `/write`.
+```text
+~/.agents/skills/
+~/.agents/knowledge/
+~/.agents/scripts/
+```
 
-KBs are disjoint — no shared leaves, no parent index. Each domain is sovereign.
+Claude compatibility is provided by symlinks:
 
-### Concepts
+```text
+~/.claude/skills    -> ~/.agents/skills
+~/.claude/knowledge -> ~/.agents/knowledge
+~/.claude/scripts   -> ~/.agents/scripts
+```
 
-- **Leaf** — atomic `.md` file, one per entry (e.g., `conways-law.md`, `active-voice.md`). Each has YAML frontmatter: `slug`, `categories` (list), `priority` (1-5), `description`, `applies_when`, `related`, optional `source`.
-- **Category MOC** (Map of Content) — `<category>.md` file listing all leaves in that category, sorted by priority.
-  - `code/`: architecture, design, teams, planning, quality, scale, decisions, languages, ux, testing, prs, style, communication.
-  - `write/`: tone, structure, format.
-- **Top-level index** — `<domain>/index.md` lists that domain's category MOCs grouped by axis.
+Codex reads skills directly from `~/.agents/skills` and its global instructions
+from `~/.codex/AGENTS.md`.
 
-Leaves with multiple categories appear in multiple MOCs of their own domain. Filesystem stays flat within each domain; categorization lives in frontmatter.
+## Applying
 
-### Retrieval Flow
+All chezmoi commands for this repo use the dedicated config:
 
-The `/code <task>` and `/write <task>` slash commands direct the agent to:
+```bash
+alias ccm='chezmoi --config=$HOME/.config/chezmoi/claude.toml'
+```
 
-1. Read `~/.claude/knowledge/<domain>/index.md` to see that domain's territories
-2. Classify the task against categories
-3. Read 1-2 relevant category MOCs
-4. Pick 3-7 leaves by description + `applies_when` match
-5. Read leaf files fully before decisions
+Then:
 
-`/code` reads only from `code/`; `/write` reads only from `write/`. The agent narrates each Read with a domain-scoped audit prefix:
-- `KB:` — code knowledge fetch
-- `WB:` — writing knowledge fetch
+- `ccm apply` syncs `~/.agents/`, `~/.claude/`, and `~/.codex/`.
+- `ccm diff` previews pending changes.
+- `ccm status` verifies runtime state.
 
-### Adding Knowledge
+## Knowledge Management
 
-The `/add-knowledge <domain> <instruction>` slash command:
+The shared knowledge base has two domain-scoped corpora:
 
-1. Parses the leading `<domain>` token (`code` or `write`)
-2. Inspects existing leaves in that domain for voice matching
-3. Synthesizes a new entry per the schema
-4. Shows a draft for review
-5. Writes the file on approval to `knowledge/<domain>/<slug>.md`
-6. Regenerates MOCs via `scripts/gen_mocs.py --knowledge-dir <KB>`
-7. Validates structural integrity via `scripts/validate_kb.py --knowledge-dir <KB>`
+- `src/dot_agents/knowledge/code/` for software-engineering laws, style rules,
+  language guides, and workflow patterns.
+- `src/dot_agents/knowledge/write/` for prose craft, tone, structure, and
+  format rules.
 
-### Helper Scripts
+Each leaf is a markdown file with frontmatter:
 
-- `scripts/gen_mocs.py` — regenerate category MOCs and `index.md` from leaf frontmatter. Domain auto-detected from `--knowledge-dir` basename (`code` or `write`). Per-domain `CATEGORY_META`, `GROUP_ORDER`, and `CATEGORY_TENSIONS`.
-- `scripts/validate_kb.py` — static checks (slug matches filename, wiki-links resolve, priorities in range, no empty descriptions, etc.). Domain auto-detected from `--knowledge-dir` basename.
+```yaml
+---
+slug: <slug>
+categories: [<category>]
+priority: 1
+description: <one sentence>
+applies_when:
+  - <task context>
+related: []
+---
+```
 
-Both default to `knowledge/code/`. Always pass `--knowledge-dir <path>` for the write domain.
+Regenerate and validate MOCs with:
 
-### Fetch-Frequency Logging
+```bash
+python3 src/dot_agents/scripts/gen_mocs.py --knowledge-dir src/dot_agents/knowledge/code
+python3 src/dot_agents/scripts/validate_kb.py --knowledge-dir src/dot_agents/knowledge/code
+```
 
-A `PostToolUse` hook (`hooks/log-knowledge-fetch.sh`) appends to `knowledge/<domain>/.stats/fetches.jsonl` on every Read of a `knowledge/<domain>/*.md` file. Domain is detected from the file path. Use the `knowledge-stats` skill to aggregate.
+Use the same commands with `write` for the writing KB.
+
+## Compatibility Rules
+
+- Add shared skills to `src/dot_agents/skills/<name>/SKILL.md`.
+- Add shared knowledge to `src/dot_agents/knowledge/<domain>/`.
+- Add Claude-only slash commands to `src/dot_claude/commands/`.
+- Every Claude command must have a matching shared skill with the same name so
+  Codex has equivalent behavior.
+- Add Codex-only config to `src/dot_codex/`, not `src/dot_claude/`.
+- Run `python3 src/dot_agents/scripts/validate_dual_agent_repo.py` after
+  structural changes.
+

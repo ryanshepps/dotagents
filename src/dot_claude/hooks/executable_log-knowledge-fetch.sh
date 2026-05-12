@@ -5,12 +5,14 @@ file_path=$(echo "$input" | jq -r '.tool_input.file_path // .tool_input.filePath
 
 domain=""
 case "$file_path" in
+  "$HOME/.agents/knowledge/code/"*.md) domain="code" ;;
+  "$HOME/.agents/knowledge/write/"*.md) domain="write" ;;
   "$HOME/.claude/knowledge/code/"*.md) domain="code" ;;
   "$HOME/.claude/knowledge/write/"*.md) domain="write" ;;
   *) exit 0 ;;
 esac
 
-stats_dir="$HOME/.claude/knowledge/$domain/.stats"
+stats_dir="$HOME/.agents/knowledge/$domain/.stats"
 mkdir -p "$stats_dir"
 
 ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)

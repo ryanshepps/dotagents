@@ -5,14 +5,14 @@ argument-hint: "<domain> <instruction>  — domain ∈ {code, write}; e.g. 'code
 
 # /add-knowledge $ARGUMENTS
 
-You are adding a new entry to a domain-scoped knowledge base under `~/.claude/knowledge/<domain>/`. Two domains exist:
+You are adding a new entry to a domain-scoped knowledge base under `~/.agents/knowledge/<domain>/`. Two domains exist:
 
 - `code` — software-engineering laws, language rules, workflow guides. Consumed by `/code`.
 - `write` — prose craft, tone, voice, composition, format rules. Consumed by `/write`.
 
 **First token of `$ARGUMENTS` MUST be the domain.** Parse it. If missing or invalid (`code|write`), stop and ask the user which KB this entry belongs to.
 
-Let `<DOMAIN>` = parsed domain. Let `<KB>` = `~/.claude/knowledge/<DOMAIN>`.
+Let `<DOMAIN>` = parsed domain. Let `<KB>` = `~/.agents/knowledge/<DOMAIN>`.
 
 ## Existing Schema (required)
 
@@ -56,15 +56,15 @@ source: <url>                        # optional; include if external
    - Populate `related` — existing slugs in the same domain that pair with this entry. Use `[]` if truly isolated. ⊥ cross-domain related links.
 4. **Show the draft** to the user before writing. Single message, code-fenced frontmatter + body preview.
 5. **On approval, write** to `<KB>/<slug>.md`.
-6. **Regenerate MOCs**: run `python3 ~/.claude/scripts/gen_mocs.py --knowledge-dir <KB>`. Report the output.
-7. **Validate**: run `python3 ~/.claude/scripts/validate_kb.py --knowledge-dir <KB>`. If errors, fix the new file and revalidate.
+6. **Regenerate MOCs**: run `python3 ~/.agents/scripts/gen_mocs.py --knowledge-dir <KB>`. Report the output.
+7. **Validate**: run `python3 ~/.agents/scripts/validate_kb.py --knowledge-dir <KB>`. If errors, fix the new file and revalidate.
 8. **Report** the final file path, which MOCs now include it, and any warnings.
 
 ## Rules
 
 - Never overwrite an existing file silently. If `<slug>.md` exists in `<KB>`, stop and ask whether to update, rename, or abort.
 - Never skip validation. The regen + validate pair keeps the corpus coherent.
-- Never invent categories. Each domain has a fixed category set defined in the script's META. If the instruction doesn't fit, stop and ask whether to add a new category (which requires updating per-domain META in `~/.claude/scripts/gen_mocs.py` and validator).
+- Never invent categories. Each domain has a fixed category set defined in the script's META. If the instruction doesn't fit, stop and ask whether to add a new category (which requires updating per-domain META in `~/.agents/scripts/gen_mocs.py` and validator).
 - Never cross domains. A `code` entry ! land in `<KB>/code/`; a `write` entry ! land in `<KB>/write/`. ⊥ shared leaves.
 - Match existing density. Leaves are typically 150-300 words with a short body (Key Takeaways bullets, sub-sections, or a procedure — whatever fits).
 
