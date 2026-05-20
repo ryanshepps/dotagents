@@ -139,6 +139,11 @@ WRITE_CATEGORY_META: CategoryMeta = {
         "Genre rules per surface: blog, email, PR comment, slack, doc.",
         "Surface-specific rules — what works in a blog post fails in an email. Use when picking conventions for the channel: length, headers, salutations, sign-offs.",
     ),
+    "social": (
+        "Social",
+        "Channel-specific craft for X, LinkedIn, Threads, and personal-brand posting.",
+        "Hooks, skimmable layout, platform-native structure, content pillars, and personal-brand positioning. Use when drafting posts for public feeds where attention is scarce and the algorithm rewards in-platform value.",
+    ),
     "critique": (
         "Critique",
         "Diagnostic mode: rubric, feedback format, what NOT to do.",
@@ -151,7 +156,7 @@ WRITE_CATEGORY_TENSIONS: Tensions = {}
 WRITE_GROUP_ORDER: GroupOrder = [
     (
         "Composition",
-        ["tone", "structure", "format"],
+        ["tone", "structure", "format", "social"],
         "Craft rules grouped by the dimension they shape: how it sounds, how it's built, where it lives.",
     ),
     (

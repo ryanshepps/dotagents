@@ -5,21 +5,22 @@ type: moc
 
 # Knowledge Base — write
 
-19 entries. Prose craft: tone, structure, format. Leaves declare priority (1=foundational, 5=niche), applies_when (writing contexts), and categories (list).
+31 entries. Prose craft: tone, structure, format. Leaves declare priority (1=foundational, 5=niche), applies_when (writing contexts), and categories (list).
 
 ## Composition
 
 Craft rules grouped by the dimension they shape: how it sounds, how it's built, where it lives.
 
-- [[tone]] — Voice, register, persona, and brand consistency rules. (9 entries)
-- [[structure]] — Composition: openings, transitions, evidence, narrative arc. (8 entries)
+- [[tone]] — Voice, register, persona, and brand consistency rules. (11 entries)
+- [[structure]] — Composition: openings, transitions, evidence, narrative arc. (16 entries)
 - [[format]] — Genre rules per surface: blog, email, PR comment, slack, doc. (1 entry)
+- [[social]] — Channel-specific craft for X, LinkedIn, Threads, and personal-brand posting. (10 entries)
 
 ## Review
 
 How to act as critique partner without imposing your voice on the author's draft.
 
-- [[critique]] — Diagnostic mode: rubric, feedback format, what NOT to do. (1 entry)
+- [[critique]] — Diagnostic mode: rubric, feedback format, what NOT to do. (2 entries)
 
 ## How to Use
 

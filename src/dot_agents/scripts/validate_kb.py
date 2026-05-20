@@ -35,7 +35,7 @@ CODE_CATEGORY_MOCS: set[str] = {
 }
 
 WRITE_CATEGORY_MOCS: set[str] = {
-    "tone", "structure", "format", "critique",
+    "tone", "structure", "format", "social", "critique",
 }
 
 DOMAIN_MOCS: dict[str, set[str]] = {
