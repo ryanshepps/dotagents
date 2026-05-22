@@ -33,7 +33,13 @@ If you are unsure whether a ticket should be created you should ask the user.
 
 1. Always make sure the default branch is up-to-date before creating a PR.
 2. Determine if a ticket should be created (see criteria above). If yes, create it first and link it to the PR.
-3. Use `gh pr create --fill` to create a PR and fill in the details (DO NOT write your own PR description)
+3. Use `gh pr create --fill` to create the PR when it produces an acceptable short body. If editing the body, keep it concise and project-focused.
+
+## PR title and description
+
+Do not prepend agent/source labels such as `[codex]` to PR titles unless the user explicitly asks for a prefix. Use a natural title that describes the change itself, such as `Fix Anthropic-only memory startup`.
+
+Keep PR descriptions short and concise. Do not include agent/source attribution, agent workflow notes, or statements that the work was done by Codex or another assistant. Do not include testing instructions, validation steps, command transcripts, or checklist-style evidence unless the user explicitly asks for them. Summarize what changed and why in project terms.
 
 ## Post Creation (MANDATORY — DO NOT SKIP)
 
