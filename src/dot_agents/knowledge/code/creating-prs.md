@@ -37,7 +37,7 @@ If you are unsure whether a ticket should be created you should ask the user.
 
 ## PR title and description
 
-Do not prepend agent/source labels such as `[codex]` to PR titles unless the user explicitly asks for a prefix. Use a natural title that describes the change itself, such as `Fix Anthropic-only memory startup`.
+Use conventional commit style for PR titles, such as `feat(memory): add semantic search` or `refactor(billing): simplify gateway setup`. Do not prepend agent/source labels such as `[codex]` unless the user explicitly asks for a prefix.
 
 Keep PR descriptions short and concise. Do not include agent/source attribution, agent workflow notes, or statements that the work was done by Codex or another assistant. Do not include testing instructions, validation steps, command transcripts, or checklist-style evidence unless the user explicitly asks for them. Summarize what changed and why in project terms.
 
