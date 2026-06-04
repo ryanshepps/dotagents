@@ -1,4 +1,4 @@
-# claude
+# dotagents
 
 Personal Claude and Codex configuration, managed by
 [chezmoi](https://www.chezmoi.io/).
@@ -53,7 +53,7 @@ from `~/.codex/AGENTS.md`.
 All chezmoi commands for this repo use the dedicated config:
 
 ```bash
-alias ccm='chezmoi --config=$HOME/.config/chezmoi/claude.toml'
+alias ccm='chezmoi --config=$HOME/.config/chezmoi/dotagents.toml'
 ```
 
 Then:
@@ -104,4 +104,3 @@ Use the same commands with `write` for the writing KB.
 - Add Codex-only config to `src/dot_codex/`, not `src/dot_claude/`.
 - Run `python3 src/dot_agents/scripts/validate_dual_agent_repo.py` after
   structural changes.
-

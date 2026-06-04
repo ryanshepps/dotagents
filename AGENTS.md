@@ -24,11 +24,11 @@ build step and no dependency install.
 
 ## Key Commands
 
-All chezmoi commands for this repo pass `--config=$HOME/.config/chezmoi/claude.toml`.
+All chezmoi commands for this repo pass `--config=$HOME/.config/chezmoi/dotagents.toml`.
 The existing shell alias is:
 
 ```bash
-alias ccm='chezmoi --config=$HOME/.config/chezmoi/claude.toml'
+alias ccm='chezmoi --config=$HOME/.config/chezmoi/dotagents.toml'
 ```
 
 Use:
@@ -82,4 +82,3 @@ from `~/.codex/AGENTS.md`.
 - Use `~/.agents/...` in shared skills and docs. `~/.claude/...` should appear
   only in Claude-specific adapter files or compatibility explanations.
 - After changing settings or hooks, validate rendered JSON/TOML where possible.
-
