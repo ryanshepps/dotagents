@@ -1,0 +1,10 @@
+.claude/commands/analyze-usage.md
+.claude/commands/create-hook.md
+.agents/skills/analyze-usage
+.agents/skills/create-hook
+.agents/skills/skill-developer
+.agents/skills/stacked-prs
+.agents/skills/technical-blog-writer
+.agents/skills/technical-editor
+.agents/skills/write-a-plan
+.agents/skills/writing-technical-docs
