@@ -2,7 +2,7 @@
 slug: creating-prs
 categories: [prs]
 priority: 1
-description: PR creation workflow — ticket criteria, default branch sync, mandatory post-create skills (/review-pr and /production-readiness).
+description: PR creation workflow — ticket criteria, default branch sync, mandatory post-create skills (/code-review-pr and /code-production-readiness).
 applies_when:
   - creating a pull request
   - preparing to open a PR
@@ -45,8 +45,8 @@ Keep PR descriptions short and concise. Do not include agent/source attribution,
 
 Immediately after `gh pr create` succeeds, you MUST invoke BOTH skills below. Use the Skill tool twice in the SAME message so they run in parallel. Do NOT run one, wait for it, then run the other. Do NOT skip either one. Do NOT respond to the user until BOTH have been invoked:
 
-1. `/review-pr <PR number>`
-2. `/production-readiness <PR number>`
+1. `/code-review-pr <PR number>`
+2. `/code-production-readiness <PR number>`
 
 If you only ran one, STOP and run the other immediately before doing anything else.
 

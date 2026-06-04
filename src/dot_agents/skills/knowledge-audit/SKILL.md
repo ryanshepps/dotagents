@@ -1,9 +1,9 @@
 ---
-name: audit-knowledge
-description: Audit a domain-scoped knowledge base for MOC health, structural drift, and best-practice violations that scripts cannot catch. Use when reviewing `~/.agents/knowledge/{code,write}/` for issues like premature MOCs, missing orientations, stale index counts, miscategorized leaves, or semantic drift from add-knowledge rules. Read-only — surfaces a punch list, never edits.
+name: knowledge-audit
+description: Audit a domain-scoped knowledge base for MOC health, structural drift, and best-practice violations that scripts cannot catch. Use when reviewing `~/.agents/knowledge/{code,write}/` for issues like premature MOCs, missing orientations, stale index counts, miscategorized leaves, or semantic drift from knowledge-add rules. Read-only — surfaces a punch list, never edits.
 ---
 
-# Audit Knowledge
+# Knowledge Audit
 
 ## Purpose
 
@@ -33,7 +33,7 @@ Group findings under these headings. Skip a heading if no findings.
 
 ### 1. Premature MOCs (`<5 entries`)
 
-Best practice (per `commands/add-knowledge.md`): do NOT keep a category MOC with fewer than 5 entries. List every category MOC with `<5` leaves. For each, suggest a merge target or an absorbing MOC.
+Best practice (per `commands/knowledge-add.md`): do NOT keep a category MOC with fewer than 5 entries. List every category MOC with `<5` leaves. For each, suggest a merge target or an absorbing MOC.
 
 How to count: parse leaf frontmatter `categories:` lists; count leaves per category.
 

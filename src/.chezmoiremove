@@ -8,3 +8,9 @@
 .agents/skills/technical-editor
 .agents/skills/write-a-plan
 .agents/skills/writing-technical-docs
+.agents/skills/add-knowledge
+.agents/skills/audit-knowledge
+.agents/skills/production-readiness
+.agents/skills/review-pr
+.agents/skills/root-cause-tracing
+.claude/commands/add-knowledge.md

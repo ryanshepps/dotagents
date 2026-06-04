@@ -3,7 +3,7 @@ description: Synthesize a new entry for a knowledge base (code or write), write 
 argument-hint: "<domain> <instruction>  — domain ∈ {code, write}; e.g. 'code add rubber duck debugging' or 'write add active voice rule'"
 ---
 
-# /add-knowledge $ARGUMENTS
+# /knowledge-add $ARGUMENTS
 
 You are adding a new entry to a domain-scoped knowledge base under `~/.agents/knowledge/<domain>/`. Two domains exist:
 

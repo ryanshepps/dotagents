@@ -1,9 +1,9 @@
 ---
-name: review-pr
+name: code-review-pr
 description: Senior engineer PR code review for production-quality validation. Use when reviewing PRs, checking release readiness, auditing code quality, reviewing architecture, or assessing whether changes meet Staff/Principal engineer standards. Covers functionality validation, change impact analysis, code structure review, and architecture integrity checks.
 ---
 
-# Review PR
+# Code Review PR
 
 ## Purpose
 

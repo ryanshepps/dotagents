@@ -1,9 +1,9 @@
 ---
-name: add-knowledge
+name: knowledge-add
 description: Add a new entry to the shared code or writing knowledge base, regenerate MOCs, and validate the corpus. Use when the user wants to teach the agent a new reusable rule, heuristic, law, workflow, or writing principle.
 ---
 
-# Add Knowledge
+# Knowledge Add
 
 Add a new entry to a domain-scoped knowledge base under
 `~/.agents/knowledge/<domain>/`. Domains:
@@ -56,4 +56,3 @@ source: <url>
   `~/.agents/scripts/gen_mocs.py` and validator expectations.
 - Never cross domains.
 - Keep leaves dense: usually 150-300 words.
-

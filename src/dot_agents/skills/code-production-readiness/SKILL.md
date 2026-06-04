@@ -1,9 +1,9 @@
 ---
-name: production-readiness
+name: code-production-readiness
 description: Review code changes for production survivability. Use when assessing whether a PR or change has the observability, resilience, security, and operational maturity to last in production long-term — beyond just "does it work."
 ---
 
-# Production Readiness Review
+# Code Production Readiness Review
 
 ## Purpose
 
