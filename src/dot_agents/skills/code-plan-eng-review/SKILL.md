@@ -2,8 +2,8 @@
 name: code-plan-eng-review
 description: |
   Engineering review for implementation plans. Reviews scope, architecture,
-  code quality, tests, performance, diagrams, failure modes, and handoff gaps
-  before code changes begin.
+  code quality, tests, performance, useful review diagrams, failure modes, and
+  handoff gaps before code changes begin.
 ---
 
 # Code Plan Engineering Review
@@ -23,7 +23,8 @@ and symbols as review anchors:
 - `§E`: existing code or flows to reuse
 - `§I`: external interfaces
 - `§V`: invariants and acceptance behavior
-- `§A`, `§D`: architecture and diagrams
+- `§A`: architecture
+- optional `§D`: diagrams added when useful for human review
 - `§T`: implementation tasks
 - `§Q`: test plan
 - `§F`: failure modes
@@ -90,13 +91,16 @@ review.
 
 ## Diagrams
 
-Use ASCII diagrams for non-trivial data flow, state machines, dependency
-graphs, processing pipelines, and decision trees.
+Diagrams are optional human-review aids, not required implementation inputs for
+other agents. Recommend ASCII diagrams only when they would materially clarify
+non-trivial data flow, state machines, dependency graphs, processing pipelines,
+or decision trees.
 
-Review whether the plan needs diagrams. Also identify implementation files that
-should receive inline ASCII diagram comments, especially models with complex
-state transitions, services with multi-step pipelines, and tests with non-obvious
-setup.
+Review whether a diagram would improve human review of the plan. Also identify
+implementation files that should receive inline ASCII diagram comments only when
+the code's behavior would otherwise be hard to review or maintain, especially
+models with complex state transitions, services with multi-step pipelines, and
+tests with non-obvious setup.
 
 If the plan modifies code near existing ASCII diagrams, check whether those
 diagrams need updates.
@@ -147,7 +151,8 @@ Evaluate:
 - Security and access boundaries
 - Distribution path for new artifacts
 - Rollout/reversibility when blast radius is non-trivial
-- Whether key flows deserve ASCII diagrams in the plan or implementation
+- Whether key flows would be clearer to human reviewers with ASCII diagrams in
+  the plan or implementation
 - One realistic production failure per new codepath
 
 ### 2. Code Quality
@@ -201,8 +206,9 @@ already has this section and it is adequate, say so.
 
 ### Diagrams
 
-State whether diagrams are adequate, missing, stale, or unnecessary. Name the
-implementation files that should receive inline diagrams.
+State whether diagrams are helpful, missing-for-review, stale, or unnecessary.
+Name implementation files that should receive inline diagrams only when they
+would clarify complex behavior for maintainers.
 
 ### Failure Modes
 
@@ -226,5 +232,5 @@ At the end, summarize:
 - Performance: N issues
 - Not In Scope: adequate / missing
 - What Already Exists: adequate / missing
-- Diagrams: adequate / missing / stale / unnecessary
+- Diagrams: helpful / missing-for-review / stale / unnecessary
 - Failure Modes: N critical gaps

@@ -8,7 +8,8 @@ description: Generate or amend a dated implementation plan. Use when the user as
 Create or amend a dated implementation plan under `docs/plans/`. This workflow
 is adapted from Cavekit's compact spec discipline, but tuned for
 `code-plan-eng-review`: the plan must be explicit enough to review for scope,
-architecture, code quality, tests, performance, diagrams, and failure modes.
+architecture, code quality, tests, performance, useful review diagrams, and
+failure modes.
 
 Before drafting or amending a plan, read `references/FORMAT.md`. Use it for
 short-plan compression, table-cell rules, symbols, section addressing,
@@ -26,7 +27,8 @@ a human-readable plan title instead of root `SPEC.md` / `# SPEC`.
 - Amend the existing plan file the user names. If no file is named, search
   `docs/plans/` for the most relevant dated plan and confirm before editing if
   multiple plausible matches exist.
-- Keep all sections in the fixed order below.
+- Keep required sections in the fixed order below. Add optional sections only in
+  their stated positions.
 - Preserve code, paths, commands, APIs, env vars, versions, error strings, SQL,
   regex, and URLs verbatim.
 - Use the short format from `references/FORMAT.md`, but do not over-compress
@@ -81,11 +83,6 @@ V2: Another invariant.
 Concrete component boundaries, data flow, ownership, and sequencing. Include
 why this is the smallest durable design.
 
-## §D Diagrams
-ASCII diagrams for non-trivial data flow, state machines, dependency graphs,
-processing pipelines, or decision trees. Use `none` only when the change is
-truly too small to need a diagram.
-
 ## §T Tasks
 id|status|task|cites
 T1|.|small, verifiable implementation task|V1,I.api
@@ -112,6 +109,13 @@ id|date|cause|fix
 - Expected validation commands.
 ```
 
+Optional section:
+
+- `## §D Diagrams`: place immediately after `§A` only when an ASCII diagram
+  would materially improve human review of non-trivial data flow, state
+  machines, dependency graphs, processing pipelines, or decision trees. Do not
+  add a diagram merely because another agent will implement the spec.
+
 ## NEW
 
 Input: user idea.
@@ -123,7 +127,8 @@ Input: user idea.
 4. List reusable existing surfaces in `§E`; call out any likely duplication.
 5. Define external interfaces in `§I`.
 6. Propose testable invariants in `§V`.
-7. Write architecture and ASCII diagrams in `§A` and `§D`.
+7. Write architecture in `§A`; add optional `§D` only when useful for human
+   review.
 8. Break work into ordered tasks in `§T`; include test tasks, not only code
    tasks.
 9. Fill `§Q`, `§F`, `§N`, empty `§B`, and `§R`.
@@ -170,7 +175,8 @@ Before finishing, verify the plan gives `code-plan-eng-review` enough material:
 
 - Scope challenge: `§G`, `§C`, `§E`, and `§N` make the minimum viable scope
   clear.
-- Architecture review: `§I`, `§A`, and `§D` name boundaries and data flow.
+- Architecture review: `§I`, `§A`, and optional `§D` name boundaries and data
+  flow.
 - Code quality review: `§E`, `§A`, and `§T` identify reuse, duplication risks,
   and likely files.
 - Test review: `§V`, `§T`, `§Q`, and `§F` connect behavior to tests.
