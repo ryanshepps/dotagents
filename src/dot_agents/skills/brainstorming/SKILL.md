@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: Use when creating or developing, before writing code or implementation plans - refines rough ideas into fully-formed designs through collaborative questioning, alternative exploration, and incremental validation. Don't use during clear 'mechanical' processes
+description: Use when creating or developing, before writing code or implementation plans - refines rough ideas into fully-formed designs through collaborative questioning, alternative exploration, incremental validation, and engineering review handoff. Don't use during clear 'mechanical' processes
 ---
 
 # Brainstorming Ideas Into Designs
@@ -10,6 +10,8 @@ description: Use when creating or developing, before writing code or implementat
 Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
 
 Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
+After the design is validated, write a design doc that is ready for
+`code-plan-eng-review`.
 
 ## Knowledge Base
 
@@ -59,16 +61,30 @@ Rules:
 - Break it into sections of 200-300 words
 - Ask after each section whether it looks right so far
 - Cover: architecture, components, data flow, error handling, testing
+- End with an engineering review handoff that prepares
+  `code-plan-eng-review` to evaluate the accepted design without guessing
 - Be ready to go back and clarify if something doesn't make sense
 
 ## After the Design
 
 **Documentation:**
 - Write the validated design to `docs/plans/YYYY-MM-DD-<topic>-design.md`
+- Include an `## Engineering Review Handoff` section in the design doc. It
+  should contain:
+  - Questions for `code-plan-eng-review`
+  - Known tradeoffs and alternatives rejected during brainstorming
+  - Files, modules, commands, schemas, routes, or jobs likely to change
+  - Existing code or flows that should be reused
+  - Not-in-scope boundaries accepted during brainstorming
+  - Expected validation commands and manual checks
+  - Risk areas for architecture, tests, performance, failure modes, security,
+    and rollout
+- Treat this handoff as the input to engineering review; do not defer it to
+  `code-generate-spec`.
 - Use elements-of-style:writing-clearly-and-concisely skill if available
 
 **Implementation (if continuing):**
-- Ask: "Ready to set up for implementation?"
+- Ask: "Ready to run `code-plan-eng-review`?"
 
 ## Key Principles
 

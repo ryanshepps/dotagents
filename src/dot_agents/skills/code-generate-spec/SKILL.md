@@ -1,15 +1,15 @@
 ---
 name: code-generate-spec
-description: Generate or amend a dated implementation plan. Use when the user asks to write a spec, generate a plan/spec, distill a spec from existing code, amend a generated plan, or record a bug/invariant for a planned code change. Produces docs/plans/YYYY-MM-DD-<slug>.md for code-plan-eng-review.
+description: Generate or amend a dated implementation plan. Use after brainstorming and engineering review when the user asks to write a spec, generate a plan/spec, distill a reviewed design from existing code, amend a generated plan, or record a bug/invariant for a planned code change. Produces docs/plans/YYYY-MM-DD-<slug>.md for implementation.
 ---
 
 # Code Spec Generation
 
 Create or amend a dated implementation plan under `docs/plans/`. This workflow
-is adapted from Cavekit's compact spec discipline, but tuned for
-`code-plan-eng-review`: the plan must be explicit enough to review for scope,
-architecture, code quality, tests, performance, useful review diagrams, and
-failure modes.
+is adapted from Cavekit's compact spec discipline, but now assumes
+`brainstorming` and `code-plan-eng-review` have already shaped the design. The
+plan must be explicit enough for implementation: scope, architecture, code
+quality, tests, performance, useful review diagrams, and failure modes.
 
 Before drafting or amending a plan, read `references/FORMAT.md`. Use it for
 short-plan compression, table-cell rules, symbols, section addressing,
@@ -32,7 +32,7 @@ a human-readable plan title instead of root `SPEC.md` / `# SPEC`.
 - Preserve code, paths, commands, APIs, env vars, versions, error strings, SQL,
   regex, and URLs verbatim.
 - Use the short format from `references/FORMAT.md`, but do not over-compress
-  details the review skill needs to reason about.
+  details implementation agents need to reason about.
 - IDs are monotonic and never reused: `V1`, `T1`, `B1`, etc.
 - `§T` uses status `.` todo, `~` in progress, `x` done.
 - Escape literal `|` in table cells as `\|`.
@@ -51,8 +51,9 @@ Inspect the user request and repo state:
 
 ## Format
 
-Use `references/FORMAT.md` as the base format. Extend it with the review-handoff
-sections below so `code-plan-eng-review` can evaluate the plan without guessing.
+Use `references/FORMAT.md` as the base format. Extend it with the implementation
+sections below so downstream agents can execute the accepted design without
+guessing.
 
 ```markdown
 # <Plan Title>
@@ -101,12 +102,6 @@ F1|api: POST /x|timeout after write|test: T2; handling: retry-safe error
 
 ## §B Bugs
 id|date|cause|fix
-
-## §R Review Handoff
-- Questions for `code-plan-eng-review`.
-- Known tradeoffs.
-- Files likely to change.
-- Expected validation commands.
 ```
 
 Optional section:
@@ -131,9 +126,9 @@ Input: user idea.
    review.
 8. Break work into ordered tasks in `§T`; include test tasks, not only code
    tasks.
-9. Fill `§Q`, `§F`, `§N`, empty `§B`, and `§R`.
-10. Write the dated plan, show the user the path, and ask whether to run
-    `code-plan-eng-review`.
+9. Fill `§Q`, `§F`, `§N`, and empty `§B`.
+10. Write the dated plan, show the user the path, and ask whether to continue
+    to implementation.
 
 ## DISTILL
 
@@ -142,7 +137,7 @@ Input: existing repo or code surface.
 1. Read README/docs, package manifests, app entrypoints, public routes/commands,
    tests, CI, and TODO markers.
 2. Infer `§G`, `§C`, `§E`, `§I`, and `§V` from actual code, not guesses.
-3. Mark uncertain claims with `?` and explain the uncertainty in `§R`.
+3. Mark uncertain claims with `?` in the affected section.
 4. Use `§T` for missing work, known TODOs, test gaps, or review follow-ups.
 5. Keep `§B` empty unless the user provided concrete bugs.
 
@@ -154,7 +149,7 @@ Input: targeted change such as `amend §V.3`, `amend §T`, or natural language.
 2. Make the smallest edit that preserves fixed section order and monotonic IDs.
 3. Do not silently rewrite unrelated sections.
 4. If the amendment changes behavior, update affected `§V`, `§T`, `§Q`, `§F`,
-   and `§R` links so the review handoff stays coherent.
+   and `§N` links so the implementation plan stays coherent.
 5. Show the resulting diff summary.
 
 ## BACKPROP
@@ -169,18 +164,16 @@ Input: bug report, failed test, or production incident.
 5. Do not fix code unless the user explicitly asks to continue after the spec
    update.
 
-## Review Compatibility Checklist
+## Implementation Compatibility Checklist
 
-Before finishing, verify the plan gives `code-plan-eng-review` enough material:
+Before finishing, verify the plan gives downstream implementation enough
+material:
 
 - Scope challenge: `§G`, `§C`, `§E`, and `§N` make the minimum viable scope
   clear.
-- Architecture review: `§I`, `§A`, and optional `§D` name boundaries and data
-  flow.
-- Code quality review: `§E`, `§A`, and `§T` identify reuse, duplication risks,
-  and likely files.
-- Test review: `§V`, `§T`, `§Q`, and `§F` connect behavior to tests.
-- Performance review: `§A` or `§F` names hot paths, concurrency, caching, data
+- Architecture: `§I`, `§A`, and optional `§D` name boundaries and data flow.
+- Code quality: `§E`, `§A`, and `§T` identify reuse, duplication risks, and
+  likely files.
+- Tests: `§V`, `§T`, `§Q`, and `§F` connect behavior to tests.
+- Performance: `§A` or `§F` names hot paths, concurrency, caching, data
   access, or explains why none apply.
-- Required handoff: `§R` lists open questions, tradeoffs, files, and validation
-  commands.

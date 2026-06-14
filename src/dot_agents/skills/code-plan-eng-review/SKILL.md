@@ -1,18 +1,38 @@
 ---
 name: code-plan-eng-review
 description: |
-  Engineering review for implementation plans. Reviews scope, architecture,
-  code quality, tests, performance, useful review diagrams, failure modes, and
-  handoff gaps before code changes begin.
+  Engineering review for brainstorming design docs and implementation plans.
+  Reviews scope, architecture, code quality, tests, performance, useful review
+  diagrams, failure modes, and handoff gaps before specs or code changes begin.
 ---
 
 # Code Plan Engineering Review
 
-Review an implementation plan before code changes. Handle any plan file or
-pasted plan.
+Review a brainstorming design doc or implementation plan before spec generation
+or code changes. Handle any plan file or pasted plan.
 
 Do not edit the plan until the user accepts a recommendation. Ask about one
 issue at a time. If no issues exist in a section, say so and continue.
+
+## Brainstorming Design Docs
+
+For the current workflow, `brainstorming` runs before this skill and should
+write `docs/plans/YYYY-MM-DD-<topic>-design.md` with an
+`## Engineering Review Handoff` section.
+
+Use that handoff as the review entry point. It should name:
+
+- Questions for `code-plan-eng-review`
+- Known tradeoffs and alternatives rejected during brainstorming
+- Files, modules, commands, schemas, routes, or jobs likely to change
+- Existing code or flows that should be reused
+- Not-in-scope boundaries accepted during brainstorming
+- Expected validation commands and manual checks
+- Risk areas for architecture, tests, performance, failure modes, security, and
+  rollout
+
+If the handoff is missing or thin, flag that as a review input gap before
+continuing.
 
 ## Generated Spec Plans
 
@@ -29,7 +49,7 @@ and symbols as review anchors:
 - `§Q`: test plan
 - `§F`: failure modes
 - `§B`: known bugs or backpropagated learnings
-- `§R`: review handoff, tradeoffs, files, validation commands
+- legacy optional `§R`: review handoff, tradeoffs, files, validation commands
 - Symbols such as `→`, `∀`, `!`, `⊥`, `≤`, `≥`, `∴` come from the bundled
   Cavekit-style format. Treat them as intentional compressed notation, not
   vague prose.
