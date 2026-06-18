@@ -5,17 +5,17 @@ type: moc
 
 # Knowledge Base — code
 
-111 entries. Software-engineering laws, language rules, and cross-cutting craft guides. Leaves declare priority (1=foundational, 5=niche), applies_when (task contexts), and categories (list).
+112 entries. Software-engineering laws, language rules, and cross-cutting craft guides. Leaves declare priority (1=foundational, 5=niche), applies_when (task contexts), and categories (list).
 
 ## Task territories (software engineering laws)
 
 Engineering laws grouped by the kind of decision they inform.
 
 - [[architecture]] — Laws governing system structure, coupling, service boundaries. (19 entries)
-- [[design]] — Code patterns: DRY, KISS, YAGNI, SOLID, abstractions, coupling. (18 entries)
+- [[design]] — Code patterns: DRY, KISS, YAGNI, SOLID, abstractions, coupling. (19 entries)
 - [[teams]] — Organizational dynamics, communication, team sizing, coordination. (8 entries)
 - [[planning]] — Estimation, timelines, optimization decisions, scoping. (14 entries)
-- [[quality]] — Testing, technical debt, code health, resilience. (23 entries)
+- [[quality]] — Testing, technical debt, code health, resilience. (24 entries)
 - [[scale]] — Performance, concurrency, parallelization limits, network effects. (4 entries)
 - [[decisions]] — Cognitive biases, heuristics, mental models for reasoning. (21 entries)
 
@@ -23,7 +23,7 @@ Engineering laws grouped by the kind of decision they inform.
 
 User-facing perception and interaction laws.
 
-- [[ux]] — User experience laws: perception, cognition, decision-making, interaction patterns. (30 entries)
+- [[ux]] — User experience laws: perception, cognition, decision-making, interaction patterns. (31 entries)
 
 ## Languages
 

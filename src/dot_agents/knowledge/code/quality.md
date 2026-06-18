@@ -23,6 +23,7 @@ Testing strategy, debt, resilience, and code-health practices. Use when writing 
 - [[goodharts-law]] (p2) — When a measure becomes a target, it ceases to be a good measure.
 - [[keep-test-paths-out-of-production-runtime]] (p2) — Keep test and local-only execution paths out of production runtime code; mock external systems at process or protocol boundaries instead.
 - [[murphys-law]] (p2) — Anything that can go wrong will go wrong.
+- [[no-half-built-features]] (p2) — Omit unfinished user-facing features unless explicitly asked to expose work in progress.
 - [[postels-law]] (p2) — Be conservative in what you do, be liberal in what you accept from others.
 - [[resilience-patterns]] (p2) — Defensive patterns — circuit breaker, bulkhead, timeout, retry with backoff — that contain failures in distributed systems.
 - [[testing-pyramid]] (p2) — A project should have many fast unit tests, fewer integration tests, and only a small number of UI tests.

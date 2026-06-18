@@ -21,6 +21,7 @@ Perception, cognition, and interaction laws governing how users experience inter
 - [[forgiving-search]] (p2) — Search must match how users describe things, not how data is stored — substring matching is not search.
 - [[law-of-proximity]] (p2) — Elements close together read as related — use spacing as the primary grouping tool.
 - [[millers-law]] (p2) — Working memory holds about 7±2 items — design around this limit, not against it.
+- [[no-half-built-features]] (p2) — Omit unfinished user-facing features unless explicitly asked to expose work in progress.
 - [[occams-razor]] (p2) — The simplest explanation is often the most accurate one.
 - [[parkinsons-law]] (p2) — Work expands to fill the time available for its completion.
 - [[peak-end-rule]] (p2) — Users judge experiences by their peak moment and their end, not the average — invest heavily in both.

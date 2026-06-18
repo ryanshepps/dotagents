@@ -22,6 +22,7 @@ Code-level patterns for what to abstract, what to leave concrete, and when copyi
 - [[hexagonal-architecture]] (p2) — Isolate domain logic from I/O by defining ports (interfaces the core needs) and adapters (implementations for DB, HTTP, queues).
 - [[law-of-demeter]] (p2) — An object should only interact with its immediate friends, not strangers.
 - [[law-of-leaky-abstractions]] (p2) — All non-trivial abstractions, to some degree, are leaky.
+- [[no-half-built-features]] (p2) — Omit unfinished user-facing features unless explicitly asked to expose work in progress.
 - [[postels-law]] (p2) — Be conservative in what you do, be liberal in what you accept from others.
 - [[principle-of-least-astonishment]] (p2) — Software and interfaces should behave in a way that least surprises users and other developers.
 - [[teslers-law]] (p2) — Every application has an inherent amount of irreducible complexity that can only be shifted, not eliminated.
