@@ -38,6 +38,8 @@ a human-readable plan title instead of root `SPEC.md` / `# SPEC`.
 - Escape literal `|` in table cells as `\|`.
 - Do not implement code after generating the spec unless the user explicitly
   asks to continue.
+- Do not commit generated or amended plan files unless the user explicitly asks
+  for a commit.
 
 ## Dispatch
 
@@ -128,7 +130,7 @@ Input: user idea.
    tasks.
 9. Fill `§Q`, `§F`, `§N`, and empty `§B`.
 10. Write the dated plan, show the user the path, and ask whether to continue
-    to implementation.
+    to implementation. Do not commit the plan unless explicitly asked.
 
 ## DISTILL
 

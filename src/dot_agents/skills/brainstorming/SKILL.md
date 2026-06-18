@@ -69,6 +69,8 @@ Rules:
 
 **Documentation:**
 - Write the validated design to `docs/plans/YYYY-MM-DD-<topic>-design.md`
+- Do not commit the design doc or any generated plan files unless the user
+  explicitly asks for a commit.
 - Include an `## Engineering Review Handoff` section in the design doc. It
   should contain:
   - Questions for `code-plan-eng-review`
