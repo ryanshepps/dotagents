@@ -21,6 +21,7 @@ Testing strategy, debt, resilience, and code-health practices. Use when writing 
 - [[bus-factor]] (p2) — The minimum number of team members whose loss would put the project in serious trouble.
 - [[doherty-threshold]] (p2) — Keep system response under 400ms — below that threshold, users stay in flow and productivity climbs sharply.
 - [[goodharts-law]] (p2) — When a measure becomes a target, it ceases to be a good measure.
+- [[keep-test-paths-out-of-production-runtime]] (p2) — Keep test and local-only execution paths out of production runtime code; mock external systems at process or protocol boundaries instead.
 - [[murphys-law]] (p2) — Anything that can go wrong will go wrong.
 - [[postels-law]] (p2) — Be conservative in what you do, be liberal in what you accept from others.
 - [[resilience-patterns]] (p2) — Defensive patterns — circuit breaker, bulkhead, timeout, retry with backoff — that contain failures in distributed systems.

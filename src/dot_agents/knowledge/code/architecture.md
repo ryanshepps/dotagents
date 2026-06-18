@@ -16,6 +16,7 @@ How components couple, where boundaries fall, and why organizational shape leaks
 - [[solid-principles]] (p1) — Five main guidelines that enhance software design, making code more maintainable and scalable.
 - [[fallacies-of-distributed-computing]] (p2) — A set of eight false assumptions that new distributed system designers often make.
 - [[hexagonal-architecture]] (p2) — Isolate domain logic from I/O by defining ports (interfaces the core needs) and adapters (implementations for DB, HTTP, queues).
+- [[keep-test-paths-out-of-production-runtime]] (p2) — Keep test and local-only execution paths out of production runtime code; mock external systems at process or protocol boundaries instead.
 - [[law-of-demeter]] (p2) — An object should only interact with its immediate friends, not strangers.
 - [[law-of-leaky-abstractions]] (p2) — All non-trivial abstractions, to some degree, are leaky.
 - [[resilience-patterns]] (p2) — Defensive patterns — circuit breaker, bulkhead, timeout, retry with backoff — that contain failures in distributed systems.

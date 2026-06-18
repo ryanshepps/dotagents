@@ -12,6 +12,7 @@ Principles and architecture-level moves that make test suites fast, reliable, an
 - [[writing-tests]] (p1) — Test writing principles — black-box, no implementation details, test isolation, editing tests is fine.
 - [[data-driven-tests]] (p2) — Express test cases as `(input, expected_output)` rows — a table the test runner iterates — so adding coverage means adding data, not code.
 - [[expectation-tests]] (p2) — Store expected output inline next to the assertion; provide an `UPDATE_EXPECT=1` mode that rewrites them when behavior changes intentionally.
+- [[keep-test-paths-out-of-production-runtime]] (p2) — Keep test and local-only execution paths out of production runtime code; mock external systems at process or protocol boundaries instead.
 - [[sans-io]] (p2) — Separate pure logic from I/O — push computation into pure functions, let a thin shell own filesystem, network, time, and randomness.
 - [[testing-pyramid]] (p2) — A project should have many fast unit tests, fewer integration tests, and only a small number of UI tests.
 - [[check-helper]] (p3) — Wrap the system-under-test in one `check(input, expected)` function so adding a new test is one line — friction is the real reason test coverage stagnates.
