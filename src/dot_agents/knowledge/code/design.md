@@ -12,6 +12,7 @@ Code-level patterns for what to abstract, what to leave concrete, and when copyi
 - [[dry-principle]] (p1) — Every piece of knowledge must have a single, unambiguous, authoritative representation.
 - [[kernighans-law]] (p1) — Debugging is twice as hard as writing the code in the first place.
 - [[kiss-principle]] (p1) — Designs and systems should be as simple as possible.
+- [[reuse-before-build]] (p1) — Before writing custom code, walk a reuse ladder — necessity, stdlib, platform, existing dependency, one-liner — and only then build.
 - [[simplicity-first]] (p1) — Write the minimum code that solves the asked problem — no speculative features, abstractions, flexibility, or defensive handling.
 - [[solid-principles]] (p1) — Five main guidelines that enhance software design, making code more maintainable and scalable.
 - [[technical-debt]] (p1) — Technical Debt is everything that slows us down when developing software.
