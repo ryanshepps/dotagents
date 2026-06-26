@@ -1,6 +1,6 @@
 ---
 name: code-create-issue
-description: Create repository-native implementation issues. Use when the user asks to create, draft, file, open, or split GitHub/GitLab/Linear issues for code work. Investigates existing commits, PRs, and issues to infer the tracker and format, asks the user to resolve product ambiguity before drafting, searches existing open and closed issues and on a likely duplicate asks whether to create a new issue, edit the existing one, or cancel, writes a tight skimmable body in bullet form with implementation freedom, adds 1-4 checkbox acceptance criteria, creates the issue in the detected tracker, and reports the resulting URL.
+description: Create repository-native implementation issues. Use when the user asks to create, draft, file, open, or split GitHub/GitLab/Linear issues for code work. Investigates existing commits, PRs, and issues to infer the tracker and format, asks the user to resolve product ambiguity in iterative rounds (looping until no product question remains) before drafting, searches existing open and closed issues and on a likely duplicate asks whether to create a new issue, edit the existing one, or cancel, writes a tight skimmable body in bullet form with implementation freedom, adds 1-4 checkbox acceptance criteria, creates the issue in the detected tracker, and reports the resulting URL.
 ---
 
 # Code Create Issue
@@ -127,15 +127,31 @@ ambiguity:
 - Behavior boundaries (what is explicitly in vs. out of scope).
 - Conflicts with existing features or issues found during investigation.
 
-**Sniff test before drafting:** would a developer reading the draft still ask a
-product question (which ones? what happens when? what's the value)? If yes, that
-question belongs in `AskUserQuestion` now, not in the issue.
+**Ask in rounds — loop until clean.** One batch is almost never enough, because
+answers cascade: each decision unlocks the next ("define the fields now" → "which
+fields?"; "add a second org set" → "which org, and how does it differ?"). Do not
+stop after one round.
 
-For each open decision you cannot resolve from the request, the code, or an
-obvious convention, **ask the user** — use `AskUserQuestion` with concrete
-options. Batch the questions; do not interrogate one at a time. Skip questions
-you can answer yourself from the codebase or a sensible default (state the
-default you chose). If nothing is genuinely ambiguous, proceed without asking.
+Run this loop:
+
+1. List every product decision currently open (use the sources above).
+2. Batch the open decisions into one `AskUserQuestion` call — concrete options,
+   not one question at a time. Skip any you can settle from the codebase or an
+   obvious default (state the default you chose).
+3. Fold the answers in. Then re-derive: did any answer open a new product
+   decision? Did it expose an enumeration or value you still don't have?
+4. If yes, run another round. Repeat until a full pass surfaces zero new product
+   questions.
+
+**Stop condition (the sniff test):** a competent developer could read the draft
+and build it without asking a single product question — no "which ones?", no
+"what happens when?", no "what's the value?". Only when a whole pass produces
+nothing new do you proceed to draft. If nothing is genuinely ambiguous from the
+start, proceed without asking.
+
+Never resolve a cascaded question by guessing (e.g. inventing field names because
+asking again felt like too many rounds). Guessing here is the exact failure this
+loop prevents — ask the next round instead.
 
 ### 4. Draft The Issue
 
