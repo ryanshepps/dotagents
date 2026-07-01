@@ -50,14 +50,7 @@
       }
     ],
     "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "{{ .chezmoi.homeDir }}/.claude/hooks/enforce-run-commands.sh"
-          }
-        ]
-      }{{ if .work }},
+{{- if .work }}
       {
         "hooks": [
           {
