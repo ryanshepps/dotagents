@@ -9,6 +9,7 @@ One leaf per language with idioms, error handling, and testing conventions. Fetc
 
 ## Entries (by priority)
 
+- [[writing-cpp]] (p1) — C++17/20/23 style — RAII, smart pointers, move semantics, const-correctness, error handling, concepts, undefined-behavior footguns, testing.
 - [[writing-elixir]] (p1) — Elixir style — pattern matching, tagged tuples, OTP, supervision trees, structs, typespecs.
 - [[writing-front-end]] (p1) — Next.js 15+ / React 19+ / TypeScript 5+ style — Server Components, hooks, type design, error boundaries, testing.
 - [[writing-java]] (p1) — Java 21+ style — records, sealed classes, pattern matching, error handling, virtual threads, streams.
